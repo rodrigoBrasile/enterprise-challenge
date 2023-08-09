@@ -1,4 +1,4 @@
-package br.com.exaltasamba.enterprisechallenge.presentation;
+package br.com.exaltasamba.enterprisechallenge.presentation.clienteFornecedor;
 
 import br.com.exaltasamba.enterprisechallenge.domain.*;
 import org.springframework.data.util.Streamable;

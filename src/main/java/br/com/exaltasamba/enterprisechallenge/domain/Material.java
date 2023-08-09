@@ -12,16 +12,19 @@ public class Material {
     @ManyToOne @JoinColumn(name="id_cliente_fornecedor")
     private ClienteFornecedor fornecedor;
     private String descricao;
+    @Enumerated(EnumType.STRING)
     private TipoUnidade unidade;
     private BigDecimal custo;
+    private String codigoFabricante;
 
 
-    public Material(int id, ClienteFornecedor fornecedor, String descricao, TipoUnidade unidade, BigDecimal custo) {
+    public Material(int id, ClienteFornecedor fornecedor, String descricao, TipoUnidade unidade, BigDecimal custo, String codigoFabricante) {
         this.id = id;
         this.fornecedor = fornecedor;
         this.descricao = descricao;
         this.unidade = unidade;
         this.custo = custo;
+        this.codigoFabricante = codigoFabricante;
     }
 
     public Material() {
@@ -67,5 +70,13 @@ public class Material {
 
     public void setCusto(BigDecimal custo) {
         this.custo = custo;
+    }
+
+    public String getCodigoFabricante() {
+        return codigoFabricante;
+    }
+
+    public void setCodigoFabricante(String codigoFabricante) {
+        this.codigoFabricante = codigoFabricante;
     }
 }
