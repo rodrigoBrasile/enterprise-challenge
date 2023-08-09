@@ -41,7 +41,7 @@ public class ProdutoController {
     @CrossOrigin
     @PutMapping("/produto/{id}")
     public void atualiza(@PathVariable int id, @RequestBody FormularioProduto formulario) {
-        produtoService.atualiza(id,  formulario.descricao(), formulario.preco());
+        produtoService.atualiza(id, formulario.descricao(), formulario.preco(), formulario.detalhes());
     }
 
     @CrossOrigin

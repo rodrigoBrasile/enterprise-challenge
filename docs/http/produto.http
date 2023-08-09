@@ -21,3 +21,19 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8080/produto
+
+###
+PUT http://localhost:8080/produto/1
+Content-Type: application/json
+
+{
+  "descricao": "Camiseta 9999_1",
+  "preco": 52.99,
+  "detalhes": [
+    {
+      "idMaterial": 1,
+      "quantidade": 88.99
+
+    }
+  ]
+}

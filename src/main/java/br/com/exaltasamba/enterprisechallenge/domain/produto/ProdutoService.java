@@ -34,10 +34,18 @@ public class ProdutoService {
     }
 
     @Transactional
-    public void atualiza(int id, String descricao, BigDecimal preco) {
+    public void atualiza(int id, String descricao, BigDecimal preco, List<DetalheProdutoDto> detalhes) {
         var produto = produtoRepository.findById(id).orElseThrow();
         produto.setDescricao(descricao);
         produto.setPreco(preco);
+
+        produto.getDetalhes().clear();
+        produto.getDetalhes().addAll(detalhes.stream()
+                .map(it -> {
+                    Material material = materialRepository.findById(it.idMaterial()).orElseThrow();
+                    return new DetalheProduto(material, it.quantidade());
+                })
+                .toList());
     }
 
     @Transactional

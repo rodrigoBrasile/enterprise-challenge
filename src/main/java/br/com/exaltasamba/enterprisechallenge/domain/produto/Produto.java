@@ -13,7 +13,7 @@ public class Produto {
     private String descricao;
     private BigDecimal preco;
 
-    @OneToMany(cascade = CascadeType.ALL) @JoinColumn(name="id_produto", nullable = false)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="id_produto", nullable = false)
     private List<DetalheProduto> detalhes;
 
     public Produto(String descricao, BigDecimal preco, List<DetalheProduto> detalhes) {
