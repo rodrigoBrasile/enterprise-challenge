@@ -18,8 +18,7 @@ public class Material {
     private String codigoFabricante;
 
 
-    public Material(int id, ClienteFornecedor fornecedor, String descricao, TipoUnidade unidade, BigDecimal custo, String codigoFabricante) {
-        this.id = id;
+    public Material(ClienteFornecedor fornecedor, String descricao, TipoUnidade unidade, BigDecimal custo, String codigoFabricante) {
         this.fornecedor = fornecedor;
         this.descricao = descricao;
         this.unidade = unidade;
