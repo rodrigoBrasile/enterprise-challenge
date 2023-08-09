@@ -1,5 +1,3 @@
-CREATE DATABASE enterprise;
-use enterprise;
 CREATE TABLE cliente_fornecedor (
                                     id INT PRIMARY KEY AUTO_INCREMENT,
                                     cpf_cnpj VARCHAR(11) NOT NULL,
