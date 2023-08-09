@@ -1,9 +1,7 @@
-package br.com.exaltasamba.enterprisechallenge.domain;
+package br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor;
 
 
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 public class ClienteFornecedor {

@@ -1,7 +1,7 @@
 package br.com.exaltasamba.enterprisechallenge.presentation.clienteFornecedor;
 
-import br.com.exaltasamba.enterprisechallenge.domain.Endereco;
-import br.com.exaltasamba.enterprisechallenge.domain.Telefone;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.Endereco;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.Telefone;
 
 import java.util.List;
 

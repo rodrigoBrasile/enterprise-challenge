@@ -1,4 +1,4 @@
-package br.com.exaltasamba.enterprisechallenge.domain;
+package br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor;
 
 public enum TipoTelefone {
     CELULAR,

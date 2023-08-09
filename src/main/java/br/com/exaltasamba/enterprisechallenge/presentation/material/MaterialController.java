@@ -1,8 +1,8 @@
 package br.com.exaltasamba.enterprisechallenge.presentation.material;
 
-import br.com.exaltasamba.enterprisechallenge.domain.Material;
-import br.com.exaltasamba.enterprisechallenge.domain.MaterialRepository;
-import br.com.exaltasamba.enterprisechallenge.domain.MaterialService;
+import br.com.exaltasamba.enterprisechallenge.domain.material.Material;
+import br.com.exaltasamba.enterprisechallenge.domain.material.MaterialRepository;
+import br.com.exaltasamba.enterprisechallenge.domain.material.MaterialService;
 import org.springframework.data.util.Streamable;
 import org.springframework.web.bind.annotation.*;
 

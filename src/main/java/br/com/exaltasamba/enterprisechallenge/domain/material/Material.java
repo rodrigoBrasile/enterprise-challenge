@@ -1,5 +1,6 @@
-package br.com.exaltasamba.enterprisechallenge.domain;
+package br.com.exaltasamba.enterprisechallenge.domain.material;
 
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedor;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

@@ -1,5 +1,7 @@
-package br.com.exaltasamba.enterprisechallenge.domain;
+package br.com.exaltasamba.enterprisechallenge.domain.material;
 
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedor;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

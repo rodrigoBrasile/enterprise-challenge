@@ -1,4 +1,4 @@
-package br.com.exaltasamba.enterprisechallenge.domain;
+package br.com.exaltasamba.enterprisechallenge.domain.material;
 
 public enum TipoUnidade {
 

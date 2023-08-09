@@ -1,6 +1,8 @@
 package br.com.exaltasamba.enterprisechallenge.presentation.clienteFornecedor;
 
-import br.com.exaltasamba.enterprisechallenge.domain.*;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedor;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedorRepository;
+import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.ClienteFornecedorService;
 import org.springframework.data.util.Streamable;
 import org.springframework.web.bind.annotation.*;
 

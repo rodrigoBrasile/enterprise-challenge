@@ -1,6 +1,6 @@
 package br.com.exaltasamba.enterprisechallenge.presentation.material;
 
-import br.com.exaltasamba.enterprisechallenge.domain.TipoUnidade;
+import br.com.exaltasamba.enterprisechallenge.domain.material.TipoUnidade;
 
 import java.math.BigDecimal;
 
