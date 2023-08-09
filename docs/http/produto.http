@@ -1,0 +1,23 @@
+###
+POST http://localhost:8080/produto
+Content-Type: application/json
+
+{
+  "descricao": "Camiseta 1000",
+  "preco": 18.22,
+  "detalhes": [
+    {
+      "idMaterial": 1,
+      "quantidade": 66.66
+
+    },
+    {
+      "idMaterial": 1,
+      "quantidade": 77.77
+
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/produto

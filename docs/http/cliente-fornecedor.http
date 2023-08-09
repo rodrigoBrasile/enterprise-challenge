@@ -1,0 +1,14 @@
+###
+GET http://localhost:8080/cliente-fornecedor
+
+###
+GET http://localhost:8080/cliente-fornecedor/{{id}}
+
+###
+POST http://localhost:8080/cliente-fornecedor
+
+###
+PUT http://localhost:8080/cliente-fornecedor/{{id}}
+
+###
+DELETE http://localhost:8080/cliente-fornecedor/{{id}}
