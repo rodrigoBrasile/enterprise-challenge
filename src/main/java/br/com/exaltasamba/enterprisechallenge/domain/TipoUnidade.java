@@ -1,6 +1,6 @@
 package br.com.exaltasamba.enterprisechallenge.domain;
 
-public enum tipoUnidade {
+public enum TipoUnidade {
 
     BARRA, BLOCO,BOBINA, CENTO, CONJUNTO, CENTIMETRO_QUADRADO, CAIXA,
     DUZIA, FOLHA, FRASCO, GALAO, GRAMA, JOGO, KILOGRAMA, LATA, LITRO,

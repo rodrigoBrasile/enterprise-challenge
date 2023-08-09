@@ -6,10 +6,15 @@ import jakarta.persistence.*;
 @Embeddable
 public class Endereco {
 
+    @Column(name = "endero_logradouro")
     private String logradouro;
+    @Column(name = "endero_numero")
     private String numero;
+    @Column(name = "endero_bairro")
     private String bairro;
+    @Column(name = "endero_estado")
     private String estado;
+    @Column(name = "endero_cep")
     private String cep;
 
     public Endereco() {

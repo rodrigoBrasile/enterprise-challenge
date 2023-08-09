@@ -2,19 +2,21 @@ package br.com.exaltasamba.enterprisechallenge.domain;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Material {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Embedded
+    @ManyToOne @JoinColumn(name="id_cliente_fornecedor")
     private ClienteFornecedor fornecedor;
     private String descricao;
-    private tipoUnidade unidade;
-    private double custo;
+    private TipoUnidade unidade;
+    private BigDecimal custo;
 
 
-    public Material(int id, ClienteFornecedor fornecedor, String descricao, tipoUnidade unidade, double custo) {
+    public Material(int id, ClienteFornecedor fornecedor, String descricao, TipoUnidade unidade, BigDecimal custo) {
         this.id = id;
         this.fornecedor = fornecedor;
         this.descricao = descricao;
@@ -50,20 +52,20 @@ public class Material {
         this.descricao = descricao;
     }
 
-    public tipoUnidade getUnidade() {
+    public TipoUnidade getUnidade() {
         return unidade;
     }
 
-    public void setUnidade(tipoUnidade unidade) {
+    public void setUnidade(TipoUnidade unidade) {
         this.unidade = unidade;
     }
 
 
-    public double getCusto() {
+    public BigDecimal getCusto() {
         return custo;
     }
 
-    public void setCusto(double custo) {
+    public void setCusto(BigDecimal custo) {
         this.custo = custo;
     }
 }

@@ -11,14 +11,26 @@ public class ClienteFornecedor {
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
         private String nome;
-        private String documento;
+        private String cpfCnpj;
         private String email;
-        @ElementCollection
-        @CollectionTable(
-                name="telefone",
-                joinColumns=@JoinColumn(name="id_cliente_fornecedor")
-        )
-        private List<Telefone> telefones;
+
+        @AttributeOverrides({
+                @AttributeOverride(name="tipo",
+                        column=@Column(name="telefone1_tipo")),
+                @AttributeOverride(name="numero",
+                        column=@Column(name="telefone1_numero"))
+        })
+        @Embedded
+        private Telefone telefone1;
+
+        @AttributeOverrides({
+                @AttributeOverride(name="tipo",
+                        column=@Column(name="telefone2_tipo")),
+                @AttributeOverride(name="numero",
+                        column=@Column(name="telefone2_numero"))
+        })
+        @Embedded
+        private Telefone telefone2;
 
         @Embedded
         private Endereco endereco;
@@ -26,11 +38,12 @@ public class ClienteFornecedor {
         public ClienteFornecedor() {
         }
 
-        public ClienteFornecedor(String nome, String documento, String email, List<Telefone> telefones, Endereco endereco) {
+        public ClienteFornecedor(String nome, String cpfCnpj, String email, Telefone telefone1, Telefone telefone2, Endereco endereco) {
                 this.nome = nome;
-                this.documento = documento;
+                this.cpfCnpj = cpfCnpj;
                 this.email = email;
-                this.telefones = telefones;
+                this.telefone1 = telefone1;
+                this.telefone2 = telefone2;
                 this.endereco = endereco;
         }
 
@@ -46,11 +59,11 @@ public class ClienteFornecedor {
         public void setNome(String nome) {
                 this.nome = nome;
         }
-        public String getDocumento() {
-                return documento;
+        public String getCpfCnpj() {
+                return cpfCnpj;
         }
-        public void setDocumento(String documento) {
-                this.documento = documento;
+        public void setCpfCnpj(String documento) {
+                this.cpfCnpj = documento;
         }
         public String getEmail() {
                 return email;
@@ -58,12 +71,23 @@ public class ClienteFornecedor {
         public void setEmail(String email) {
                 this.email = email;
         }
-        public List<Telefone> getTelefones() {
-                return telefones;
+
+        public Telefone getTelefone1() {
+                return telefone1;
         }
-        public void setTelefones(List<Telefone> telefones) {
-                this.telefones = telefones;
+
+        public void setTelefone1(Telefone telefone1) {
+                this.telefone1 = telefone1;
         }
+
+        public Telefone getTelefone2() {
+                return telefone2;
+        }
+
+        public void setTelefone2(Telefone telefone2) {
+                this.telefone2 = telefone2;
+        }
+
         public Endereco getEndereco() {
                 return endereco;
         }
