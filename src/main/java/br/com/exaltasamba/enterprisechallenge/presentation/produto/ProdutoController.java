@@ -34,7 +34,7 @@ public class ProdutoController {
     @CrossOrigin
     @PostMapping("/produto")
     public int cadastra(@RequestBody FormularioProduto formulario) {
-        var clienteFornecedor = produtoService.cadastra(formulario.descricao(), formulario.preco());
+        var clienteFornecedor = produtoService.cadastra(formulario.descricao(), formulario.preco(), formulario.detalhes());
         return clienteFornecedor.getId();
     }
 

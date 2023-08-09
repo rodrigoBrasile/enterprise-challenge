@@ -1,11 +1,9 @@
 package br.com.exaltasamba.enterprisechallenge.domain.produto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 public class Produto {
@@ -15,9 +13,13 @@ public class Produto {
     private String descricao;
     private BigDecimal preco;
 
-    public Produto(String descricao, BigDecimal preco) {
+    @OneToMany(cascade = CascadeType.ALL) @JoinColumn(name="id_produto", nullable = false)
+    private List<DetalheProduto> detalhes;
+
+    public Produto(String descricao, BigDecimal preco, List<DetalheProduto> detalhes) {
         this.descricao = descricao;
         this.preco = preco;
+        this.detalhes = detalhes;
     }
 
     public Produto() {
@@ -46,5 +48,13 @@ public class Produto {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    public List<DetalheProduto> getDetalhes() {
+        return detalhes;
+    }
+
+    public void setDetalhes(List<DetalheProduto> detalhes) {
+        this.detalhes = detalhes;
     }
 }
