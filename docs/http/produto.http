@@ -3,17 +3,17 @@ POST http://localhost:8080/produto
 Content-Type: application/json
 
 {
-  "descricao": "Camiseta 1000",
-  "preco": 18.22,
+  "descricao": "Camiseta 9999_1",
+  "preco": 500,
   "detalhes": [
     {
       "idMaterial": 1,
-      "quantidade": 66.66
+      "quantidade": 2
 
     },
     {
       "idMaterial": 1,
-      "quantidade": 77.77
+      "quantidade": 3
 
     }
   ]
@@ -23,11 +23,11 @@ Content-Type: application/json
 GET http://localhost:8080/produto
 
 ###
-PUT http://localhost:8080/produto/1
+PUT http://localhost:8080/produto/2
 Content-Type: application/json
 
 {
-  "descricao": "Camiseta 9999_1",
+  "descricao": "Camiseta 1",
   "preco": 52.99,
   "detalhes": [
     {
@@ -37,3 +37,6 @@ Content-Type: application/json
     }
   ]
 }
+
+###
+DELETE http://localhost:8080/produto/2
