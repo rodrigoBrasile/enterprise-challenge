@@ -1,6 +1,6 @@
 
 ###
-GET http://localhost:8080/material
+GET http://localhost:8080/material/1
 
 ###
 POST http://localhost:8080/material
@@ -8,26 +8,26 @@ Content-Type: application/json
 
 {
   "idFornecedor": 1,
-  "descricao": "Mesa Vermelha",
-  "unidade": "METRO_QUADRADO",
-  "custo": 256.89,
-  "codigoFabricante": "XX098"
+  "descricao": "tecido amarelo",
+  "unidade": "METRO",
+  "custo": 150,
+  "codigoFabricante": "0969872LZ"
 }
 
 
 ###
-GET http://localhost:8080/material/2
+GET http://localhost:8080/material
 
 ###
-DELETE http://localhost:8080/material/1
+DELETE http://localhost:8080/material/3
 
 ###
-PUT http://localhost:8080/material/2
+PUT http://localhost:8080/material/3
 Content-Type: application/json
 
 {
-  "descricao": "Mesa ROXA",
+  "descricao": "tecido amarelo",
   "unidade": "METRO",
-  "custo": 0.99,
-  "codigoFabricante": "YY098"
+  "custo": 25.80,
+  "codigoFabricante": "XX098"
 }

@@ -33,14 +33,14 @@ public class ClienteFornecedorController {
     @CrossOrigin
     @PostMapping("/cliente-fornecedor")
     public int cadastra(@RequestBody FormularioClienteFornecedor formulario) {
-        var clienteFornecedor = clienteFornecedorService.cadastra(formulario.nome(), formulario.documento(), formulario.email(), formulario.telefones().get(0), formulario.telefones().get(1), formulario.endereco());
+        var clienteFornecedor = clienteFornecedorService.cadastra(formulario.nome(), formulario.cpfCnpj(), formulario.email(), formulario.telefone1(), formulario.telefone2(), formulario.endereco());
         return clienteFornecedor.getId();
     }
 
     @CrossOrigin
     @PutMapping("/cliente-fornecedor/{id}")
     public void atualiza(@PathVariable int id, @RequestBody FormularioClienteFornecedor formulario) {
-        clienteFornecedorService.atualiza(id,  formulario.nome(), formulario.documento(), formulario.email(), formulario.telefones().get(0), formulario.telefones().get(1), formulario.endereco());
+        clienteFornecedorService.atualiza(id,  formulario.nome(), formulario.cpfCnpj(), formulario.email(), formulario.telefone1(), formulario.telefone2(), formulario.endereco());
     }
 
     @CrossOrigin

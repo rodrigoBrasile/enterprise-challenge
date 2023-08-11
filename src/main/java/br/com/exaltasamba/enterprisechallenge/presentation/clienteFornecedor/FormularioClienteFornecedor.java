@@ -5,4 +5,4 @@ import br.com.exaltasamba.enterprisechallenge.domain.clienteFornecedor.Telefone;
 
 import java.util.List;
 
-public record FormularioClienteFornecedor(String nome, String documento, String email, List<Telefone> telefones, Endereco endereco){}
+public record FormularioClienteFornecedor(String nome, String cpfCnpj, String email, Telefone telefone1, Telefone telefone2, Endereco endereco){}

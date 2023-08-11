@@ -2,13 +2,57 @@
 GET http://localhost:8080/cliente-fornecedor
 
 ###
-GET http://localhost:8080/cliente-fornecedor/{{id}}
+GET http://localhost:8080/cliente-fornecedor/1
 
 ###
 POST http://localhost:8080/cliente-fornecedor
+Content-Type: application/json
+
+{
+  "cpfCnpj": "11122233344",
+  "nome": "Cebolinha",
+  "email": "cebolinha@gmail.com",
+  "telefone1": {
+    "tipo": "CELULAR",
+    "numero": "11982287777"
+  },
+  "telefone2": {
+    "tipo": "CELULAR",
+    "numero": "11111222221"
+  },
+  "endereco": {
+    "logradouro": "Av. da Internet",
+    "numero": "444",
+    "bairro": "Interlagos",
+    "estado": "SP",
+    "cep": "18000200"
+  }
+}
 
 ###
-PUT http://localhost:8080/cliente-fornecedor/{{id}}
+PUT http://localhost:8080/cliente-fornecedor/1
+Content-Type: application/json
+
+{
+  "cpf_Cnpj": "11122233344",
+  "nome": "Cebolinha",
+  "email": "cebolinha@gmail.com",
+  "telefone1": {
+    "tipo": "CELULAR",
+    "numero": "11982287777"
+  },
+  "telefone2": {
+    "tipo": "CELULAR",
+    "numero": "11111222221"
+  },
+  "endereco": {
+    "logradouro": "Av. da Internet",
+    "numero": "444",
+    "bairro": "Interlagos",
+    "estado": "SP",
+    "cep": "18000200"
+  }
+}
 
 ###
-DELETE http://localhost:8080/cliente-fornecedor/{{id}}
+DELETE http://localhost:8080/cliente-fornecedor/6

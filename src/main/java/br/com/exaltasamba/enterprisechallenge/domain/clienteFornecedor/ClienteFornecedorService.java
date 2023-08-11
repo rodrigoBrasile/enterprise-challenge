@@ -11,8 +11,8 @@ public class ClienteFornecedorService {
         this.clienteFornecedorRepository = clienteFornecedorRepository;
     }
     @Transactional
-    public ClienteFornecedor cadastra(String nome, String documento, String email, Telefone telefone1, Telefone telefone2, Endereco endereco) {
-        var clienteFornecedor = new ClienteFornecedor(nome, documento, email, telefone1, telefone2, endereco);
+    public ClienteFornecedor cadastra(String nome, String cpfCnpj, String email, Telefone telefone1, Telefone telefone2, Endereco endereco) {
+        var clienteFornecedor = new ClienteFornecedor(nome, cpfCnpj, email, telefone1, telefone2, endereco);
         clienteFornecedorRepository.save(clienteFornecedor);
         return clienteFornecedor;
     }
