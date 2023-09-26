@@ -1,0 +1,50 @@
+###
+GET http://localhost:8080/ordem-venda
+
+###
+GET http://localhost:8080/ordem-venda/3
+
+###
+POST http://localhost:8080/ordem-venda
+Content-Type: application/json
+
+{
+  "idFornecedor": 1,
+  "dataEntrega": "2023-10-01",
+  "logradouro": "Av. Interlagos",
+  "numero": "132",
+  "bairro": "interlagos",
+  "estado": "SP",
+  "cep": "18200000",
+  "detalhes": [
+    {
+      "idProduto": 1,
+      "quantidade": 1,
+      "desconto": 0
+    }
+  ]
+}
+
+###
+PUT http://localhost:8080/ordem-venda/3
+Content-Type: application/json
+
+{
+  "idFornecedor": 1,
+  "dataEntrega": "2023-10-01",
+  "logradouro": "Av. Interlagos",
+  "numero": "132",
+  "bairro": "interlagossssss",
+  "estado": "SP",
+  "cep": "18200000",
+  "detalhes": [
+    {
+      "idProduto": 1,
+      "quantidade": 2,
+      "desconto": 0
+    }
+  ]
+}
+
+###
+DELETE http://localhost:8080/ordem-venda/3
