@@ -15,8 +15,8 @@ Content-Type: application/json
   "numero": "132",
   "bairro": "interlagos",
   "estado": "SP",
-  "cep": "??",
-  "informacoesAdicionais": "....",
+  "cep": "CEP",
+  "informacoesAdicionais": "info adc",
   "detalhes": [
     {
       "idProduto": 1,
@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/ordem-venda/3
+PUT http://localhost:8080/ordem-venda/8
 Content-Type: application/json
 
 {
@@ -49,4 +49,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8080/ordem-venda/3
+DELETE http://localhost:8080/ordem-venda/8

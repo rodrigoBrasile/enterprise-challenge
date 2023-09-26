@@ -29,8 +29,8 @@ public class OrdemVendaService {
                 numero,
                 bairro,
                 estado,
-                cep,
                 informacoesAdicionais,
+                cep,
                 detalhes.stream()
                         .map(it -> {
                             Produto produto = produtoRepository.findById(it.idProduto()).orElseThrow();
