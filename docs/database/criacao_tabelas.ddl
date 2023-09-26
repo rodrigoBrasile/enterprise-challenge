@@ -38,9 +38,13 @@ CREATE TABLE material(
 insert into material(id_cliente_fornecedor, descricao, unidade, codigo_fabricante, custo)
     value (1, 'Tecido Azul', 'METRO', '001', 10);
 insert into material(id_cliente_fornecedor, descricao, unidade, codigo_fabricante, custo)
-    value (1, 'Tecido Amarelo', 'METRO', '001', 15);
+    value (1, 'Tecido Amarelo', 'METRO', '002', 15);
 insert into material(id_cliente_fornecedor, descricao, unidade, codigo_fabricante, custo)
-    value (1, 'logo fiap', 'UNIDADE', '001', 5);
+    value (1, 'logo fiap', 'UNIDADE', '003', 5);
+insert into material(id_cliente_fornecedor, descricao, unidade, codigo_fabricante, custo)
+    value (2, 'Tecido Branco', 'UNIDADE', '001', 7);
+insert into material(id_cliente_fornecedor, descricao, unidade, codigo_fabricante, custo)
+    value (2, 'Tecido Cor de calabresa', 'UNIDADE', '002', 7);
 
 CREATE TABLE produto(
                         id INT PRIMARY KEY AUTO_INCREMENT,
@@ -66,6 +70,10 @@ insert into detalhe_produto (id_produto, id_material, quantidade)
 values (1, 2, 1);
 insert into detalhe_produto (id_produto, id_material, quantidade)
 values (1, 3, 1);
+insert into detalhe_produto (id_produto, id_material, quantidade)
+values (2, 4, 1);
+insert into detalhe_produto (id_produto, id_material, quantidade)
+values (2, 5, 1);
 
 CREATE TABLE ordem_venda(
                             id INT PRIMARY KEY AUTO_INCREMENT,
