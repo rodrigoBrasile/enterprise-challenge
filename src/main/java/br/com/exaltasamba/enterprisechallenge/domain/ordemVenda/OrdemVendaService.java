@@ -21,15 +21,16 @@ public class OrdemVendaService {
         this.clienteFornecedorRepository = clienteFornecedorRepository;
     }
     @Transactional
-    public OrdemVenda cadastra(int idFornecedor, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String cep, List<DetalheOrdemVendaDto> detalhes) {
+    public OrdemVenda cadastra(int idCliente, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String cep, String informacoesAdicionais, List<DetalheOrdemVendaDto> detalhes) {
         var ordemVenda = new OrdemVenda(
-                clienteFornecedorRepository.findById(idFornecedor).orElseThrow(),
+                clienteFornecedorRepository.findById(idCliente).orElseThrow(),
                 dataEntrega,
                 logradouro,
                 numero,
                 bairro,
                 estado,
                 cep,
+                informacoesAdicionais,
                 detalhes.stream()
                         .map(it -> {
                             Produto produto = produtoRepository.findById(it.idProduto()).orElseThrow();
@@ -42,7 +43,7 @@ public class OrdemVendaService {
     }
 
     @Transactional
-    public void atualiza(int id, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String cep, List<DetalheOrdemVendaDto> detalhes) {
+    public void atualiza(int id, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String cep, String informacoesAdicionais, List<DetalheOrdemVendaDto> detalhes) {
         var ordemVenda = ordemVendaRepository.findById(id).orElseThrow();
         ordemVenda.setDataEntrega(dataEntrega);
         ordemVenda.setLogradouro(logradouro);
@@ -50,6 +51,7 @@ public class OrdemVendaService {
         ordemVenda.setBairro(bairro);
         ordemVenda.setEstado(estado);
         ordemVenda.setCep(cep);
+        ordemVenda.setInformacoesAdicionais(informacoesAdicionais);
 
         ordemVenda.getDetalhes().clear();
         ordemVenda.getDetalhes().addAll(detalhes.stream()

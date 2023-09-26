@@ -33,14 +33,14 @@ public class OrdemVendaController {
     @CrossOrigin
     @PostMapping("/ordem-venda")
     public int cadastra(@RequestBody FormularioOrdemVenda formulario) {
-        var ordemVenda = ordemVendaService.cadastra(formulario.idFornecedor(), formulario.dataEntrega(), formulario.logradouro(), formulario.numero(), formulario.bairro(), formulario.estado(), formulario.cep(), formulario.detalhes() );
+        var ordemVenda = ordemVendaService.cadastra(formulario.idCliente(), formulario.dataEntrega(), formulario.logradouro(), formulario.numero(), formulario.bairro(), formulario.estado(), formulario.cep(), formulario.informacoesAdicionais(), formulario.detalhes());
         return ordemVenda.getId();
     }
 
     @CrossOrigin
     @PutMapping("/ordem-venda/{id}")
     public void atualiza(@PathVariable int id, @RequestBody FormularioOrdemVenda formulario) {
-        ordemVendaService.atualiza(id, formulario.dataEntrega(), formulario.logradouro(), formulario.numero(), formulario.bairro(), formulario.estado(), formulario.cep(),  formulario.detalhes());
+        ordemVendaService.atualiza(id, formulario.dataEntrega(), formulario.logradouro(), formulario.numero(), formulario.bairro(), formulario.estado(), formulario.cep(),  formulario.informacoesAdicionais(), formulario.detalhes());
     }
 
     @CrossOrigin

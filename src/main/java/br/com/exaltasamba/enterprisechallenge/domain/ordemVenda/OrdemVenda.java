@@ -13,7 +13,7 @@ public class OrdemVenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne @JoinColumn(name="id_cliente_fornecedor")
+    @ManyToOne @JoinColumn(name="id_cliente")
     private ClienteFornecedor clienteFornecedor;
     private LocalDate dataEntrega;
 
@@ -22,11 +22,12 @@ public class OrdemVenda {
     private String bairro;
     private String estado;
     private String cep;
+    private String informacoesAdicionais;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="id_ordem_venda", nullable = false)
     private List<DetalheOrdemVenda> detalhes;
 
-    public OrdemVenda(ClienteFornecedor clienteFornecedor, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String cep, List<DetalheOrdemVenda> detalhes) {
+    public OrdemVenda(ClienteFornecedor clienteFornecedor, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String informacoesAdicionais, String cep, List<DetalheOrdemVenda> detalhes) {
         this.clienteFornecedor = clienteFornecedor;
         this.dataEntrega = dataEntrega;
         this.logradouro = logradouro;
@@ -34,6 +35,7 @@ public class OrdemVenda {
         this.bairro = bairro;
         this.estado = estado;
         this.cep = cep;
+        this.informacoesAdicionais = informacoesAdicionais;
         this.detalhes = detalhes;
     }
 
@@ -102,5 +104,13 @@ public class OrdemVenda {
 
     public void setDetalhes(List<DetalheOrdemVenda> detalhes) {
         this.detalhes = detalhes;
+    }
+
+    public String getInformacoesAdicionais() {
+        return informacoesAdicionais;
+    }
+
+    public void setInformacoesAdicionais(String informacoesAdicionais) {
+        this.informacoesAdicionais = informacoesAdicionais;
     }
 }

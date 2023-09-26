@@ -2,20 +2,21 @@
 GET http://localhost:8080/ordem-venda
 
 ###
-GET http://localhost:8080/ordem-venda/3
+GET http://localhost:8080/ordem-venda/2
 
 ###
 POST http://localhost:8080/ordem-venda
 Content-Type: application/json
 
 {
-  "idFornecedor": 1,
-  "dataEntrega": "2023-10-01",
+  "idCliente": 1,
+  "dataEntrega": "2023-10-25",
   "logradouro": "Av. Interlagos",
   "numero": "132",
   "bairro": "interlagos",
   "estado": "SP",
-  "cep": "18200000",
+  "cep": "??",
+  "informacoesAdicionais": "....",
   "detalhes": [
     {
       "idProduto": 1,
@@ -30,13 +31,14 @@ PUT http://localhost:8080/ordem-venda/3
 Content-Type: application/json
 
 {
-  "idFornecedor": 1,
+  "idCliente": 1,
   "dataEntrega": "2023-10-01",
   "logradouro": "Av. Interlagos",
   "numero": "132",
   "bairro": "interlagossssss",
   "estado": "SP",
   "cep": "18200000",
+  "informacoesAdicionais": "....",
   "detalhes": [
     {
       "idProduto": 1,
