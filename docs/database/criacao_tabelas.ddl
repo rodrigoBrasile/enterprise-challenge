@@ -79,6 +79,7 @@ CREATE TABLE ordem_venda(
                             id INT PRIMARY KEY AUTO_INCREMENT,
                             id_cliente INT NOT NULL,
                             FOREIGN KEY (id_cliente) REFERENCES cliente_fornecedor(id),
+                            status varchar(80) not null,
                             data_entrega DATE NOT NULL,
                             logradouro VARCHAR(255) NOT NULL,
                             numero VARCHAR(255) NOT NULL,
@@ -87,8 +88,11 @@ CREATE TABLE ordem_venda(
                             CEP VARCHAR(8) NOT NULL,
                             informacoes_adicionais VARCHAR(255) NOT NULL);
 
-insert into ordem_venda (id_cliente, data_entrega, logradouro, numero, bairro, estado, CEP, informacoes_adicionais)
-values (1, '2023-10-15', 'Av Interlagos', '123', 'Logo ali', 'SP', '18200000', '....aqui são as informações adicionais');
+insert into ordem_venda (id_cliente, status, data_entrega, logradouro, numero, bairro, estado, CEP, informacoes_adicionais)
+values (1, 'AGUARDANDO_PRODUCAO','2023-10-15', 'Av Interlagos', '123', 'Logo ali', 'SP', '18200000', '....aqui são as informações adicionais');
+
+insert into ordem_venda (id_cliente, status, data_entrega, logradouro, numero, bairro, estado, CEP, informacoes_adicionais)
+values (1, 'EM_PRODUCAO', '2023-10-07', 'Av da Internet', '321', 'bairro', 'SP', '18200000', '....aqui são as informações adicionais');
 
 CREATE TABLE detalhe_ordem_venda(
                                     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -101,3 +105,6 @@ CREATE TABLE detalhe_ordem_venda(
 
 insert into detalhe_ordem_venda (id_ordem_venda, id_produto, quantidade, desconto)
 values (1, 1, 1, 0);
+
+insert into detalhe_ordem_venda (id_ordem_venda, id_produto, quantidade, desconto)
+values (2, 1, 1, 0);

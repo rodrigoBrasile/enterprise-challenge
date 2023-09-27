@@ -23,11 +23,12 @@ public class OrdemVenda {
     private String estado;
     private String cep;
     private String informacoesAdicionais;
+    private String status;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="id_ordem_venda", nullable = false)
     private List<DetalheOrdemVenda> detalhes;
 
-    public OrdemVenda(ClienteFornecedor clienteFornecedor, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String informacoesAdicionais, String cep, List<DetalheOrdemVenda> detalhes) {
+    public OrdemVenda(ClienteFornecedor clienteFornecedor, LocalDate dataEntrega, String logradouro, String numero, String bairro, String estado, String informacoesAdicionais, String cep, String status, List<DetalheOrdemVenda> detalhes) {
         this.clienteFornecedor = clienteFornecedor;
         this.dataEntrega = dataEntrega;
         this.logradouro = logradouro;
@@ -36,6 +37,7 @@ public class OrdemVenda {
         this.estado = estado;
         this.cep = cep;
         this.informacoesAdicionais = informacoesAdicionais;
+        this.status = status;
         this.detalhes = detalhes;
     }
 
@@ -120,5 +122,13 @@ public class OrdemVenda {
 
     public void setClienteFornecedor(ClienteFornecedor clienteFornecedor) {
         this.clienteFornecedor = clienteFornecedor;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
