@@ -113,4 +113,12 @@ public class OrdemVenda {
     public void setInformacoesAdicionais(String informacoesAdicionais) {
         this.informacoesAdicionais = informacoesAdicionais;
     }
+
+    public ClienteFornecedor getClienteFornecedor() {
+        return clienteFornecedor;
+    }
+
+    public void setClienteFornecedor(ClienteFornecedor clienteFornecedor) {
+        this.clienteFornecedor = clienteFornecedor;
+    }
 }

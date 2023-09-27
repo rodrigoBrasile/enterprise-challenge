@@ -2,7 +2,7 @@
 GET http://localhost:8080/ordem-venda
 
 ###
-GET http://localhost:8080/ordem-venda/2
+GET http://localhost:8080/ordem-venda/1
 
 ###
 POST http://localhost:8080/ordem-venda
