@@ -29,7 +29,10 @@ public class LoginController {
     @PostMapping("/login")
     public UsuarioDto login(@RequestBody FormularioLogin formularioLogin) {
         Usuario usuario = authService.autentica(formularioLogin.username(), formularioLogin.senha());
-        return new UsuarioDto(usuario.getId(), usuario.getUsername(), usuario.getPerfil());
+
+        String token = JwtTokenUtil.generateToken(usuario.getUsername());
+
+        return new UsuarioDto(usuario.getUsername(), usuario.getPerfil(), token);
     }
 
 

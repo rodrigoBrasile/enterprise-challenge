@@ -1,5 +1,5 @@
 package br.com.exaltasamba.enterprisechallenge.presentation.login;
 
-public record UsuarioDto(int id, String username, String perfil) {
+public record UsuarioDto(String username, String perfil, String token) {
 }
 
